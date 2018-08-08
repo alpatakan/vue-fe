@@ -2,6 +2,9 @@ import DashboardLayout from '../components/Dashboard/Layout/DashboardLayout.vue'
 // GeneralViews
 import NotFound from '../components/GeneralViews/NotFoundPage.vue'
 
+//pdr
+import PdrMain from '../components/Pdr/PdrMain.vue'
+
 // Admin pages
 import Overview from 'src/components/Dashboard/Views/Overview.vue'
 import UserProfile from 'src/components/Dashboard/Views/UserProfile.vue'
@@ -16,6 +19,11 @@ const routes = [
     path: '/',
     component: DashboardLayout,
     redirect: '/admin/overview'
+  },
+  {
+    path: '/main',
+    name: 'PdrMain',
+    component: PdrMain
   },
   {
     path: '/admin',
