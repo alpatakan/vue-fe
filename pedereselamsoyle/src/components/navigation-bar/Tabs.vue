@@ -2,7 +2,7 @@
   <div id="applicationContainer">
     <div id="navBarContainer" class="navbar">
       <ul class="nav">
-        <li class="nav-item" :class="{ active: menuItem.isActive }" v-for="menuItem in navItemsArray"><a :href="menuItem.href" @click="selectTabItem(menuItem)">{{ menuItem.name }}</a></li>
+        <li class="nav-item" :class="{ active: menuItem.isActive }" v-for="menuItem in navItemsArray" :key="menuItem.name"><a :href="menuItem.href" @click="selectTabItem(menuItem)">{{ menuItem.name }}</a></li>
       </ul>
     </div>
 
