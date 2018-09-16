@@ -1,7 +1,7 @@
 <template>
-  <div id="individualTabContentContainer" v-show="isActive" class="jumbotron">
+  <b-tab id="individualTabContentContainer" v-show="isActive" class="jumbotron">
     <slot></slot>
-  </div>
+  </b-tab>
 </template>
 
 <script>

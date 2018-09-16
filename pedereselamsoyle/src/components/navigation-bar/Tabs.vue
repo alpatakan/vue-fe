@@ -1,10 +1,13 @@
 <template>
   <div id="applicationContainer">
-    <div id="navBarContainer" class="navbar">
-      <ul class="nav">
-        <li class="nav-item" :class="{ active: menuItem.isActive }" v-for="menuItem in navItemsArray" :key="menuItem.name"><a :href="menuItem.href" @click="selectTabItem(menuItem)">{{ menuItem.name }}</a></li>
-      </ul>
-    </div>
+    <b-navbar toggleable="md" type="dark" variant="info" >
+      <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+      <b-navbar-nav>
+        <b-nav-item class="nav-item" :class="{ active: menuItem.isActive }" v-for="menuItem in navItemsArray" :key="menuItem.name" :href="menuItem.href" @click="selectTabItem(menuItem)">
+          {{ menuItem.name }}
+        </b-nav-item>
+      </b-navbar-nav>
+    </b-navbar>
 
     <div id="tabContentContainer">
       <slot></slot>
