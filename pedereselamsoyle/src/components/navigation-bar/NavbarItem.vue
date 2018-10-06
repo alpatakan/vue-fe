@@ -1,5 +1,5 @@
 <template>
-  <b-tab id="individualTabContentContainer" v-show="isActive" class="jumbotron">
+  <b-tab id="individualMenuItem" v-show="isActive">
     <slot></slot>
   </b-tab>
 </template>
@@ -8,16 +8,12 @@
   export default {
     props: {
       name: { required: true },
+      navTo: { required: true },
       selected: { default: false }
     },
     data() {
       return {
         isActive: false
-      }
-    },
-    computed: {
-      href() {
-        return '#' + this.name.toLowerCase().replace(/ /g, '-')
       }
     },
     mounted() {
