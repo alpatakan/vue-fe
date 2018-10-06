@@ -3,33 +3,19 @@
     <div id="navbar-container">
       <tabs>
         <tab name="Dashboard" :selected="true">
-          <h1>Composer is great</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus quae repellendus vel! Accusamus aliquid,
-            consequuntur culpa cumque esse ex fugiat impedit inventore laudantium maiores molestiae officia provident quod
-            totam veniam!</p>
+        <dashboard/>
         </tab>
         <tab name="Formlar">
-          <h1>Vagrant is awesome</h1>
-          <p>A animi, delectus deleniti dignissimos dolorum ea eveniet hic, impedit, magnam odio tempore ut. Assumenda
-            blanditiis dolorem doloremque eos, id magni maxime necessitatibus odio porro ratione repudiandae tempore
-            voluptate voluptatibus.</p>
+          <forms/>
         </tab>
         <tab name="Kisiler">
-          <h1>Docker is way better</h1>
-          <p>Animi fuga in inventore quibusdam sed sint. Ab alias, aliquid at aut commodi culpa ea eligendi ex ipsam
-            libero minus nam nobis numquam obcaecati placeat praesentium quis quod tempore voluptatum?</p>
+          <people/>
         </tab>
         <tab name="Rapor Sablonu">
-          <h1>What is Node.js</h1>
-          <p>Accusamus cupiditate dolor doloribus illo ipsam itaque laborum, maxime natus numquam odit officiis possimus
-            quidem voluptatem! Atque dignissimos labore modi nobis quasi quo sit! Aspernatur ea perspiciatis repellendus
-            reprehenderit. Laboriosam?</p>
+          <reportTemplate/>
         </tab>
         <tab name="Oturumlar">
-          <h1>What is Node.js</h1>
-          <p>Accusamus cupiditate dolor doloribus illo ipsam itaque laborum, maxime natus numquam odit officiis possimus
-            quidem voluptatem! Atque dignissimos labore modi nobis quasi quo sit! Aspernatur ea perspiciatis repellendus
-            reprehenderit. Laboriosam?</p>
+          <sessions/>
         </tab>
       </tabs>
     </div>
@@ -39,11 +25,21 @@
 <script>
   import Tabs from '@/components/navigation-bar/Tabs'
   import Tab from '@/components/navigation-bar/Tab'
+  import Dashboard from '@/components/Dashboard'
+  import Forms from '@/components/Forms'
+  import People from '@/components/People'
+  import ReportTemplate from '@/components/ReportTemplate'
+  import Sessions from '@/components/Sessions'
 
   export default {
     components: {
       Tabs,
-      Tab
+      Tab,
+      Dashboard,
+      Forms,
+      People,
+      ReportTemplate,
+      Sessions,
     }
   }
 
