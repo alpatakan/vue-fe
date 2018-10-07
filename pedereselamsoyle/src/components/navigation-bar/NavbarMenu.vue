@@ -32,13 +32,19 @@
     mounted() {
       console.log('mount edildi navbar');
       this.menuItemsArray = this.$children;
+      this.selectFromInitUrl(this.$route.path.replace('/',''));
     },
     methods: {
       selectMenuItemAndGo(selectedMenuItem) {
         this.menuItemsArray.forEach(menuItem => {
-          menuItem.isActive = (selectedMenuItem == menuItem)
-        },
-        this.$router.push(selectedMenuItem.navTo))
+          menuItem.isActive = (selectedMenuItem == menuItem);
+        });
+        this.$router.push(selectedMenuItem.navTo);
+      },
+      selectFromInitUrl(url) {
+        this.menuItemsArray.forEach(menuItem => {
+          menuItem.isActive = (url == menuItem.navTo);
+        });
       }
     }
   }
