@@ -10,10 +10,10 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    {path: '/dashboard', component: Dashboard, alias: '/'},
-    {path: '/forms', component: Forms},
-    {path: '/people', component: People},
-    {path: '/report-template', component: ReportTemplate},
-    {path: '/sessions', component: Sessions},
+    { path: '/dashboard', component: Dashboard, alias: '/' },
+    { path: '/forms', component: Forms },
+    { path: '/people', component: People },
+    { path: '/report-template', component: ReportTemplate },
+    { path: '/sessions', component: Sessions },
   ]
 })

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <navbarMenu>
-      <navbarItem name="Dashboard" navTo="dashboard" :selected="true"></navbarItem>
+      <navbarItem name="Dashboard" navTo="dashboard"></navbarItem>
       <navbarItem name="Formlar" navTo="forms"></navbarItem>
       <navbarItem name="Rapor Sablonu" navTo="report-template"></navbarItem>
       <navbarItem name="Kisiler" navTo="people"></navbarItem>
@@ -31,6 +31,5 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

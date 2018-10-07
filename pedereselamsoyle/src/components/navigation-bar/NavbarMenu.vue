@@ -1,14 +1,17 @@
 <template>
   <div id="navbarContainer">
-    <b-navbar toggleable="md" type="dark" variant="info" >
-      <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+    <b-navbar toggleable="md" type="dark" variant="info">
       <b-navbar-nav>
         <b-nav-item class="nav-item"
                     :class="{ active: menuItem.isActive }"
                     v-for="menuItem in menuItemsArray"
-                      :key="menuItem.name"
-                      @click="selectMenuItemAndGo(menuItem)">
+                    :key="menuItem.name"
+                    @click="selectMenuItemAndGo(menuItem)"
+        >
           {{ menuItem.name }}
+          <b-badge v-if="menuItem.name == 'Dashboard'" variant="light">
+            123
+          </b-badge>
         </b-nav-item>
       </b-navbar-nav>
     </b-navbar>
