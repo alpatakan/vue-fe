@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <navbarMenu>
+    <!-- if login or register page is loaded do not show navbar -->
+    <navbarMenu v-if="['login', 'register'].indexOf($route.name) < -1">
       <navbarItem name="Dashboard" navTo="dashboard"></navbarItem>
       <navbarItem name="Formlar" navTo="forms"></navbarItem>
       <navbarItem name="Rapor Sablonu" navTo="report-template"></navbarItem>
@@ -20,7 +21,7 @@
     components: {
       NavbarMenu,
       NavbarItem,
-    }
+    },
   }
 </script>
 
