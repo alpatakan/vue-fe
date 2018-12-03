@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import {router} from './router.js'
-import store from './store.js'
+import {store} from './store/store.js'
 import BootstrapVue from 'bootstrap-vue'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
@@ -16,7 +16,7 @@ Vue.config.productionTip = false
 
 Vue.use(VueAxios, axios)
 Vue.use(BootstrapVue);
-Vue.use(VeeValidate);
+Vue.use(VeeValidate, { fieldsBagName: 'veeFields' });
 
 /* eslint-disable no-new */
 new Vue({

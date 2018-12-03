@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- if login or register page is loaded do not show navbar -->
-    <navbarMenu v-if="['login', 'register'].indexOf($route.name) < -1">
+    <navbarMenu v-if="['login', 'register'].indexOf($route.name) < 0">
       <navbarItem name="Dashboard" navTo="dashboard"></navbarItem>
       <navbarItem name="Formlar" navTo="forms"></navbarItem>
       <navbarItem name="Rapor Sablonu" navTo="report-template"></navbarItem>
@@ -21,7 +21,10 @@
     components: {
       NavbarMenu,
       NavbarItem,
-    },
+	},
+	mounted() {
+		//console.log("asd:" + ['login', 'register'].indexOf(this.$route.name));
+	}
   }
 </script>
 
