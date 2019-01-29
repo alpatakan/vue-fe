@@ -3,9 +3,11 @@ import Router from 'vue-router'
 
 import Dashboard from '@/components/Dashboard'
 import Forms from '@/components/Forms'
-import People from '@/components/People'
+import Groups from '@/components/Groups'
 import ReportTemplate from '@/components/ReportTemplate'
 import Sessions from '@/components/Sessions'
+import EditForm from '@/components/EditForm'
+import EditGui from '@/components/EditGui'
 
 import LoginPage from '@/components/authentication/LoginPage'
 import RegisterPage from '@/components/authentication/RegisterPage'
@@ -19,9 +21,11 @@ export const router = new Router({
 
 		{ path: '/dashboard', component: Dashboard, alias: '/' },
 		{ path: '/forms', component: Forms },
-		{ path: '/people', component: People },
+		{ path: '/groups', component: Groups },
 		{ path: '/report-template', component: ReportTemplate },
 		{ path: '/sessions', component: Sessions },
+		{ path: '/edit', component: EditForm },
+		{ path: '/editGui', component: EditGui },
 
 		// otherwise redirect to dashboard
 		{ path: '*', redirect: '/dashboard' },

@@ -5,7 +5,7 @@
 			<navbarItem name="Dashboard" navTo="dashboard"></navbarItem>
 			<navbarItem name="Formlar" navTo="forms"></navbarItem>
 			<navbarItem name="Rapor Sablonu" navTo="report-template"></navbarItem>
-			<navbarItem name="Kisiler" navTo="people"></navbarItem>
+			<navbarItem name="Kisiler" navTo="groups"></navbarItem>
 			<navbarItem name="Oturumlar" navTo="sessions"></navbarItem>
 		</navbarMenu>
 		<router-view/>

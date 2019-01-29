@@ -19,7 +19,7 @@ function login(username, password) {
     };
 
 	//return fetch(`${config.apiUrl}/users/authenticate`, requestOptions)
-	return fetch(`http://185.144.14.72:7890/api/v1/users/auth`, requestOptions)
+	return fetch(`http://18.188.73.107:7890/api/v1/users/auth`, requestOptions)
         .then(handleResponse)
         .then(user => {
 			// login successful if there's a jwt token in the response
@@ -48,7 +48,7 @@ function register(user) {
     };
 
 	//return fetch(`${config.apiUrl}/users/register`, requestOptions).then(handleResponse);
-	return fetch(`http://185.144.14.72:7890/api/v1/users/register`, requestOptions).then(handleResponse).catch(error => {
+	return fetch(`http://18.188.73.107:7890/api/v1/users/register`, requestOptions).then(handleResponse).catch(error => {
 		console.log(error);
 	});
 }
@@ -60,7 +60,7 @@ function getAll() {
     };
 
 	//return fetch(`${config.apiUrl}/users`, requestOptions).then(handleResponse);
-	return fetch(`http://185.144.14.72:7890/api/v1/users`, requestOptions).then(handleResponse);
+	return fetch(`http://18.188.73.107:7890/api/v1/users`, requestOptions).then(handleResponse);
 }
 
 
@@ -70,7 +70,7 @@ function getById(id) {
         headers: authHeader()
     };
 
-	return fetch(`http://185.144.14.72:7890/api/v1/users/${id}`, requestOptions).then(handleResponse);
+	return fetch(`http://18.188.73.107:7890/api/v1/users/${id}`, requestOptions).then(handleResponse);
     //return fetch(`${config.apiUrl}/users/${id}`, requestOptions).then(handleResponse);
 }
 
@@ -81,7 +81,7 @@ function update(user) {
         body: JSON.stringify(user)
 	};
 
-	return fetch(`http://185.144.14.72:7890/api/v1/users/${user.id}`, requestOptions).then(handleResponse);
+	return fetch(`http://18.188.73.107:7890/api/v1/users/${user.id}`, requestOptions).then(handleResponse);
     //return fetch(`${config.apiUrl}/users/${user.id}`, requestOptions).then(handleResponse);
 }
 
@@ -92,7 +92,7 @@ function _delete(id) {
         headers: authHeader()
     };
 
-	return fetch(`http://185.144.14.72:7890/api/v1/users/${id}`, requestOptions).then(handleResponse);
+	return fetch(`http://18.188.73.107:7890/api/v1/users/${id}`, requestOptions).then(handleResponse);
     //return fetch(`${config.apiUrl}/users/${id}`, requestOptions).then(handleResponse);
 }
 

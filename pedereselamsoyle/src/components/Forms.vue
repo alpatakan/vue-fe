@@ -1,16 +1,33 @@
 <template>
-	<div>
- 		<div id="userMenuContentContainer">
+	<b-container>
+		<!-- User Interface controls -->
+		<br/>
+		<b-row>
+			<b-col sm="9">
+				<b-form-group horizontal class="mb-1">
+					<b-input-group>
+						<b-form-input v-model="filter" placeholder="Arama.." />
+						<b-input-group-append>
+							<b-btn :disabled="!filter" @click="filter = ''">Temizle</b-btn>
+						</b-input-group-append>
+					</b-input-group>
+				</b-form-group>
+			</b-col>
+		</b-row>
 		<!-- Main table element -->
-			<b-table show-empty
-					 ref="table"
-					 :items="formList"
-					 :fields="fields"
-			>
+		<b-table show-empty sm="9"
+					ref="table"
+					:items="formList"
+					:fields="fields"
+					:filter="filter"
+		>
 			<template slot="actions" slot-scope="row">
 				<!-- We use @click.stop here to prevent a 'row-clicked' event from also happening -->
 				<b-button size="sm" @click.stop="loadTest(row)" class="mr-2">
 					{{ row.item.showModal ? 'Hide' : 'Show'}} Details
+				</b-button>
+				<b-button :to="'edit'" size="sm" class="mr-1">
+					Edit
 				</b-button>
 				<b-button size="sm" v-on:click.stop="removeTest(row.item)" class="mr-1">
 					Remove
@@ -51,11 +68,10 @@
  				</popform>
 			</template>
 		</b-table>
-		</div>
 		<button v-on:click.stop="renewForms()" class="btn">
 			getir
 		</button>
-	</div>
+	</b-container>
 </template>
 
 <script>
@@ -86,11 +102,12 @@ export default {
 				},
 				{ key: "actions", label: "Aksiyonlar" }
 			],
+			filter: null,
 		};
 	},
 	mounted() {
 		this.instance = axios.create({
-			baseURL: "http://185.144.14.72:7890/api/v1",
+			baseURL: "http://18.188.73.107:7890/api/v1",
 			timeout: 1000,
 			headers: {
 				"x-auth-token": JSON.parse(localStorage.getItem('user')).token
@@ -173,7 +190,13 @@ export default {
 				.catch(error => {
 					console.log(error);
 				});
-		}
+		},
+		//for pagination
+		//onFiltered (filteredItems) {
+			// Trigger pagination to update the number of buttons/pages due to filtering
+			//this.totalRows = filteredItems.length;
+			//this.currentPage = 1;
+		//}
 	}
 };
 </script>
